@@ -1,0 +1,42 @@
+# The config recipe.
+# https://rasa.com/docs/rasa/model-configuration/
+recipe: default.v1
+ 
+# The assistant project unique identifier
+assistant_id: 20260424-143627-bounded-fuse
+ 
+# FIX: Cambiado de 'en' a 'es' para correcto soporte de español,
+# acentos y caracteres como ñ en la tokenización
+language: es
+ 
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 200
+    constrain_similarities: true
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 100
+    constrain_similarities: true
+  - name: FallbackClassifier
+    threshold: 0.7
+    ambiguity_threshold: 0.1
+ 
+# FIX: Reemplazado 'policies: null' por políticas reales.
+# Sin esto, el modelo no entrena la capa de diálogo correctamente
+# y no puede manejar conversaciones fuera del flujo exacto.
+policies:
+  - name: MemoizationPolicy
+  - name: RulePolicy
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 100
+    constrain_similarities: true
+ 

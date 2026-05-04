@@ -1,0 +1,141 @@
+version: "3.1"
+
+nlu:
+
+- intent: greet
+  examples: |
+    - hola
+    - buenas
+    - qué tal
+    - hola bot
+    - buen día
+    - buenas tardes
+    - buenas noches
+    - cómo va?
+    - ey
+    - qué onda?
+    - todo bien?
+    - hola asistente
+    - che, estás ahí?
+    - hola, necesito info
+    - hola, podrías ayudarme
+    - un gusto saludarte
+    - qué hacés?
+
+- intent: goodbye
+  examples: |
+    - chau
+    - adiós
+    - hasta luego
+    - nos vemos
+    - me voy
+    - cerrar chat
+    - hasta mañana
+    - fue un gusto
+    - hasta la próxima
+    - me retiro
+    - ya no necesito nada más
+    - nos hablamos
+    - chau, mil gracias
+    - hablamos después
+    - que tengas un buen día
+
+- intent: consultar_clima
+  examples: |
+    - ¿Cómo está el clima?
+    - ¿Hace frío?
+    - ¿Va a llover hoy?
+    - Decime la temperatura en [Paraná](city)
+    - Clima en [Buenos Aires](city)
+    - ¿Está nublado en [Santa Fe](city)?
+    - ¿Hay mucha humedad?
+    - Pasame el pronóstico de [Córdoba](city)
+    - ¿Llueve en [Salta](city)?
+    - ¿A cuánto estamos en [Posadas](city)?
+    - ¿Va a refrescar a la noche?
+    - ¿Cómo viene el tiempo para el fin de semana?
+    - ¿Va a estar lindo el sábado en [Santa Fe](city)?
+    - ¿Qué onda el viento en [Comodoro Rivadavia](city)?
+    - Tirame el clima de [Tucumán](city)
+    - ¿Está despejado en [La Plata](city)?
+    - Clima de [Neuquén](city), por favor
+    - Hace calor en [Santiago del Estero](city)?
+    - Reporte del clima en [Mar del Plata](city)
+    - ¿Va a llover mañana en [Paraná](city)?
+    - Pronóstico extendido para [Rosario](city)
+    - ¿Tendremos sol el domingo?
+    - ¿Cómo va a estar el clima pasado mañana?
+    - Pasame el pronóstico de los próximos días
+    - ¿Va a nevar este invierno en [Bariloche](city)?
+    - ¿Cómo está en [Paraná](city) ahora?
+    - ¿Qué onda el tiempo mañana?
+
+- intent: chitchat
+  examples: |
+    - ¿De qué cuadro sos?
+    - Contame un chiste
+    - ¿Sos un robot?
+    - ¿Tenés novia?
+    - ¿Cuál es el sentido de la vida?
+    - ¿Te gusta el fútbol?
+    - ¿Qué pensás de la inteligencia artificial?
+    - ¿Tenés amigos?
+    - ¿Dónde vivís?
+    - ¿Qué onda tu día?
+    - Decime una frase motivadora
+    - ¿Messi o Maradona?
+    - ¿Te gusta el mate?
+    - ¿Qué música escuchás?
+    - Estás aburrido?
+    - ¿Tenés mascotas?
+    - ¿Te gusta viajar?
+
+- intent: pedir_soporte
+  examples: |
+    - quiero hablar con un humano
+    - pasame con una persona
+    - necesito soporte técnico
+    - hablar con un asesor
+    - derivame a soporte
+    - asistencia humana por favor
+    - comunicame con un operador
+    - soporte técnico urgente
+    - quiero denunciar un problema
+    - poneme con un representante
+    - ayuda de un experto
+    - conectame con alguien real
+    - hablar con el encargado
+    - me cansé del bot, quiero un asesor
+    - necesito atención humana
+
+- intent: affirm
+  examples: |
+    - sí
+    - obvio
+    - claro
+    - por supuesto
+    - exacto
+    - así es
+    - dale
+    - totalmente
+    - afirmativo
+    - seguro
+    - sin dudas
+    - sí, por favor
+    - correcto
+
+- intent: deny
+  examples: |
+    - no
+    - para nada
+    - ni ahí
+    - nop
+    - nunca
+    - negativo
+    - no gracias
+    - no quiero
+    - tampoco
+    - nada que ver
+    - mejor no
+    - por ahora no
+    - paso

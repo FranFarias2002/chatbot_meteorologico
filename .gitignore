@@ -1,0 +1,21 @@
+# Entornos virtuales y dependencias
+.venv/
+venv/
+env/
+
+# Archivos de Rasa y modelos entrenados
+.rasa/
+models/
+.session.json
+.rasa_shell.pid
+
+# Variables de entorno y base de datos local
+.env
+*.db
+
+# Caché de Python
+**/__pycache__/
+*.pyc
+
+# Tests
+tests/

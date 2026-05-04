@@ -1,0 +1,71 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - consultar_clima
+  - chitchat
+  - pedir_soporte
+
+entities:
+  - city
+
+slots:
+  ciudad:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: city
+
+  contador_errores:
+    type: float
+    initial_value: 0
+    mappings:
+      - type: custom
+
+  contador_chitchat:
+    type: float
+    initial_value: 0
+    mappings:
+      - type: custom
+
+responses:
+  utter_greet:
+    - text: "Hola. ¿De qué ciudad desea conocer el estado del tiempo?"
+
+  utter_goodbye:
+    - text: "Gracias por su consulta. Tenga un buen día."
+
+  utter_soporte:
+    - text: "Entendido. Lo estoy derivando con un agente de soporte técnico. Por favor, aguarde un instante."
+
+  utter_iamabot:
+    - text: "Soy un asistente automatizado especializado en información meteorológica."
+
+  utter_chitchat:
+    - text: "Soy un asistente técnico enfocado en el clima. ¿En qué ciudad necesita conocer las condiciones meteorológicas?"
+
+  utter_preguntar_ciudad:
+    - text: "¿Para qué ciudad requiere el pronóstico?"
+
+  utter_no_entendi:
+    - text: "Lo siento, no he podido comprender su mensaje. ¿Podría ser más específico?"
+
+  utter_affirm:
+    - text: "Entendido."
+
+  utter_deny:
+    - text: "Perfecto, procedo a cerrar la conversación."
+
+session_config:
+  session_expiration_time: 5
+  carry_over_slots_to_new_session: false
+
+actions:
+  - action_get_weather
+  - action_handle_chitchat
+  - utter_soporte

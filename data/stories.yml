@@ -1,0 +1,52 @@
+version: "3.1"
+ 
+stories:
+ 
+- story: flujo de clima completo
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: consultar_clima
+    - action: action_get_weather
+ 
+- story: despedida
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+ 
+- story: pregunta por el bot
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+ 
+- story: soporte manual
+  steps:
+    - intent: pedir_soporte
+    - action: utter_soporte
+ 
+- story: afirmación usuario
+  steps:
+    - intent: affirm
+    - action: utter_affirm
+ 
+- story: negación usuario
+  steps:
+    - intent: deny
+    - action: utter_deny
+ 
+# FIX: Agregado flujo de reintento de ciudad para que el modelo
+# aprenda a manejar el escenario de error en producción
+- story: reintento de ciudad
+  steps:
+    - intent: consultar_clima
+    - action: action_get_weather
+    - intent: consultar_clima
+    - action: action_get_weather
+ 
+# Flujo de chitchat seguido de consulta de clima
+- story: chitchat luego clima
+  steps:
+    - intent: chitchat
+    - action: action_handle_chitchat
+    - intent: consultar_clima
+    - action: action_get_weather
