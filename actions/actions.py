@@ -354,22 +354,27 @@ class ActionGetWeather(Action):
         prompt = f"""
 Eres un asistente meteorológico para {city}.
 Fecha y hora actual: {dia_hoy} {fecha_hoy}, {hora_actual} hs.
-
+ 
 CLIMA AHORA MISMO (usá esto para preguntas sobre 'hoy', 'ahora', 'temperatura actual'):
 {clima_actual_texto}
-
+ 
 PRONÓSTICO PRÓXIMOS DÍAS (cada línea incluye el nombre del día de la semana):
 {pronostico_texto}
-
+ 
 MENSAJE DEL USUARIO: "{tracker.latest_message.get('text')}"
-
+ 
 INSTRUCCIONES:
 - {"NO saludes, el usuario ya está en conversación." if es_continuacion else "Saluda cordialmente."}
 - Para 'ahora', 'hoy', 'temperatura actual': usá CLIMA AHORA MISMO.
 - Para días futuros ('mañana', días de la semana): usá PRONÓSTICO y calculá la fecha correcta desde {dia_hoy} {fecha_hoy}.
 - Sé breve. No repitas datos que el usuario no pidió.
+- TEMA EXCLUSIVO: Solo podés responder preguntas sobre el clima y el tiempo meteorológico.
+  Si el mensaje del usuario NO es sobre el clima meteorológico (por ejemplo: biología,
+  matemáticas, historia, tecnología, preguntas generales, curiosidades), respondé
+  ÚNICAMENTE con esta frase exacta, sin agregar nada más:
+  "Solo puedo ayudarte con consultas meteorológicas. ¿Querés saber el clima de alguna ciudad?"
 """
-
+ 
         respuesta_final = consultar_llm_groq(prompt)
 
         # ── Paso 5: Enviar respuesta y actualizar estado ─────────────

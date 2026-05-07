@@ -89,6 +89,30 @@ nlu:
     - Estás aburrido?
     - ¿Tenés mascotas?
     - ¿Te gusta viajar?
+    - ¿Cuál es la temperatura del cuerpo humano?
+    - ¿A cuántos grados hierve el agua?
+    - ¿Cuál es la temperatura de fusión del hierro?
+    - ¿Qué temperatura tiene el sol?
+    - ¿A qué temperatura se cocina el pollo?
+    - ¿Cuál es la temperatura normal de una persona?
+    - ¿Cómo se hace una suma entre dos enteros?
+    - ¿Cuánto es 5 más 3?
+    - Explicame qué es la fotosíntesis
+    - ¿Qué es la inteligencia artificial?
+    - ¿Cómo funciona un motor?
+    - ¿Cuál es la capital de Francia?
+    - ¿Quién inventó el teléfono?
+    - Contame algo interesante
+    - ¿Cuántos planetas hay en el sistema solar?
+    - ¿Qué significa algoritmo?
+    - ¿Cómo se calcula el área de un círculo?
+    - ¿Qué es la gravedad?
+    - ¿Cómo se hace una pizza?
+    - ¿Cuál es la velocidad de la luz?
+    - Explicame la relatividad
+    - ¿Quién fue Einstein?
+    - ¿Qué es el ADN?
+    - ¿Cómo funciona internet?
 
 - intent: pedir_soporte
   examples: |
